@@ -19,8 +19,9 @@ database.once("connected", () => {
 });
 
 const routes = require("./routes/routes");
+const games = require("./routes/games");
 
-app.use("/api", routes);
+app.use("/api", routes, games);
 
 app.listen(3000, () => {
   console.log(`Server Started at ${3000}`);
