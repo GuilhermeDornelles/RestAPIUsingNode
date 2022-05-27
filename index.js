@@ -6,7 +6,9 @@ const app = express();
 app.use(express.json());
 
 require("dotenv").config();
-const mongoString = process.env.DATABASE_URL;
+const mongoString =
+  process.env.DATABASE_URL ||
+  "mongodb+srv://bancodedados2:bancodedados2@cluster0.3rwha7o.mongodb.net/REST-API-NODE";
 
 mongoose.connect(mongoString);
 const database = mongoose.connection;
